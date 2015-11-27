@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarkdownEditor.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace MarkdownEditor.Views
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private MainPageViewModel ViewModel => DataContext as MainPageViewModel;
+
         public MainPage()
         {
             this.InitializeComponent();
