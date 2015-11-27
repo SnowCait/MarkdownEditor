@@ -29,5 +29,24 @@ namespace MarkdownEditor.Views
         {
             this.InitializeComponent();
         }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            ViewModel.PropertyChanged += ViewModel_PropertyChanged;
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+
+            ViewModel.PropertyChanged -= ViewModel_PropertyChanged;
+        }
+
+        private async void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            Preview.NavigateToString(await ViewModel.ConvertAsync());
+        }
     }
 }

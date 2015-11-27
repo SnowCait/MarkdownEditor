@@ -10,6 +10,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox AcceptsReturn="True" Text="{Binding MarkdownText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <WebView x:Name="Preview" Grid.Column="1"/>
 
     </Grid>
 </Page>
