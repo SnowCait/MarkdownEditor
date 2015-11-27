@@ -1,7 +1,8 @@
 ﻿{
   "dependencies": {
     "Core.Markdown": "0.1.128",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
+    "Prism.Windows": "6.0.1"
   },
   "frameworks": {
     "uap10.0": {}
